@@ -20,6 +20,7 @@ class EncodeStringsToBase64ViewController: BaseViewController {
         //encodes a string and sets the label text to the encoded string text value
         //pass in a label to receive the encoded text, pass in a reference to a textField.text object to be encoded and displayed
         encodeStringAndSetLabelText(label: labelEncodedText, inputText: encodeStringToBase64(string: getTextFieldText(inputTextField: textField.text!)))
+        //tells the user their string was encoded
         showAlert(title: "Encoded", message: "You string was encoded", style: .alert)
         
     }
@@ -27,6 +28,7 @@ class EncodeStringsToBase64ViewController: BaseViewController {
     @IBAction func copyEncodedTextButtonPressed(_ sender: UIButton) {
          UIPasteboard.general.string = labelEncodedText.text
         print("Pasteboard Value: \(getPasteboardString())")
+        //tells the user the encoded label text was copied to the Pasteboard
         showAlert(title: "Copied", message: "Encoded String Copied", style: .alert)
 
     }
@@ -39,11 +41,12 @@ class EncodeStringsToBase64ViewController: BaseViewController {
     
     //usage: Pass in a textfield.text to return it's string value
     func getTextFieldText(inputTextField: String)->String {
-        let inputTextField = inputTextField
+        let inputTextField = inputTextFieldS
         return inputTextField
     }
     
     func clearTextField() {
+        //sets textField.text to nil
         textField.text = nil
     }
     
@@ -73,20 +76,24 @@ class EncodeStringsToBase64ViewController: BaseViewController {
         return base64Text
     }
     
+    //reads and returns the label.text value from a given label as a String
     func getLabelText(label:UILabel)->String{
         let label = label
         label.text = label.text
         return label.text!
     }
     
+    //sets labelEncoded.text to a string that has been encoded with Base64 encoding
+    //hard coded, but simplifed to a function call when used.
+    //could be modified with more function parameters
     func setLabelTextWithEncodedString() {
         labelEncodedText.text = encodeStringToBase64(string: getTextFieldText(inputTextField: textField.text!))
         clearTextField()
     }
     
     func encodeStringAndSetLabelText(label: UILabel, inputText: String) {
-        var label = label
-        var inputText = inputText
+        let label = label
+        let inputText = inputText
         label.text = inputText
         clearTextField()
     }
