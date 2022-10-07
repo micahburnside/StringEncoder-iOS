@@ -107,14 +107,14 @@
 			children = (
 				549351A728EF4984000C04E9 /* AppDelegate.swift */,
 				549351A928EF4984000C04E9 /* SceneDelegate.swift */,
+				54C07F2E28EF768600A191E7 /* BaseViewController.swift */,
+				54C07F3028EF947500A191E7 /* UIViewController+.swift */,
 				549351AB28EF4984000C04E9 /* EncodeStringsToBase64ViewController.swift */,
 				549351AD28EF4984000C04E9 /* Main.storyboard */,
 				549351B328EF4985000C04E9 /* Assets.xcassets */,
 				549351B528EF4985000C04E9 /* LaunchScreen.storyboard */,
 				549351B828EF4985000C04E9 /* Info.plist */,
 				549351B028EF4984000C04E9 /* EncodeBase64Strings.xcdatamodeld */,
-				54C07F2E28EF768600A191E7 /* BaseViewController.swift */,
-				54C07F3028EF947500A191E7 /* UIViewController+.swift */,
 			);
 			path = EncodeBase64Strings;
 			sourceTree = "<group>";

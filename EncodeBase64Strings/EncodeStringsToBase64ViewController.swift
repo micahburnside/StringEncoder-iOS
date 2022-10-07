@@ -17,16 +17,18 @@ class EncodeStringsToBase64ViewController: BaseViewController {
     
     //MARK: - User Interactions
     @IBAction func encodeStringToBase64Pressed(_ sender: UIButton) {
-        //simple, not as re-usable
-//        setLabelTextWithEncodedString()
-        //more complex, params need to be renamed for readability, re-usable
+        //encodes a string and sets the label text to the encoded string text value
+        //pass in a label to receive the encoded text, pass in a reference to a textField.text object to be encoded and displayed
         encodeStringAndSetLabelText(label: labelEncodedText, inputText: encodeStringToBase64(string: getTextFieldText(inputTextField: textField.text!)))
+        showAlert(title: "Encoded", message: "You string was encoded", style: .alert)
         
     }
     
     @IBAction func copyEncodedTextButtonPressed(_ sender: UIButton) {
          UIPasteboard.general.string = labelEncodedText.text
         print("Pasteboard Value: \(getPasteboardString())")
+        showAlert(title: "Copied", message: "Encoded String Copied", style: .alert)
+
     }
     
     override func viewDidLoad() {
@@ -34,12 +36,8 @@ class EncodeStringsToBase64ViewController: BaseViewController {
 
     }
     //MARK: - TextField Methods
-
-    func getInputTextFieldText()->String {
-        let inputTextFieldText = getTextFieldText(inputTextField: textField.text!)
-        return inputTextFieldText
-    }
     
+    //usage: Pass in a textfield.text to return it's string value
     func getTextFieldText(inputTextField: String)->String {
         let inputTextField = inputTextField
         return inputTextField
@@ -50,11 +48,17 @@ class EncodeStringsToBase64ViewController: BaseViewController {
     }
     
 //MARK: - Base64 Encoding
+    ///func encodeStringToBase64(string: String) -> String
+    /// pass in any String type object to be encoded using Base64 encdoing
     func encodeStringToBase64(string: String) -> String {
+        //assigns string to function paramter "string"
         let string = string
+        //string.data(using:.utf8) calls and returns`Data` containing a representation of the `String` encoded using UTF8 encoding.
         let utf8str = string.data(using: .utf8)
+        //encodes the utf8str using Base64 encoding
         let base64Encoded = utf8str?.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0))
         print("\(String(describing: base64Encoded))")
+        //returns base64Encoded to satisfy the String return type requirement
         return base64Encoded!
     }
     
@@ -70,9 +74,9 @@ class EncodeStringsToBase64ViewController: BaseViewController {
     }
     
     func getLabelText(label:UILabel)->String{
-        var label = String()
-        labelEncodedText.text = label
-        return label
+        let label = label
+        label.text = label.text
+        return label.text!
     }
     
     func setLabelTextWithEncodedString() {
