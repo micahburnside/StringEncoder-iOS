@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Encode Strings To Base64 View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="EncodeStringsToBase64ViewController" customModule="EncodeBase64Strings" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZl-Kd-pbn">
+                                <rect key="frame" x="16" y="47" width="358" height="350"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="qix-hD-7wo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IjV-IW-meA">
+                                <rect key="frame" x="16" y="700" width="358" height="48"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="kaE-Hn-2X5"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Enocde To Base64"/>
+                                <connections>
+                                    <action selector="encodeStringToBase64Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iyN-6t-aI5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oxs-dF-vNl">
+                                <rect key="frame" x="16" y="772" width="358" height="48"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="54l-Nb-Aac"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Copy Encoded Text"/>
+                                <connections>
+                                    <action selector="copyEncodedTextButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sNq-O9-cHD"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="input string here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oyn-hL-VQc">
+                                <rect key="frame" x="16" y="628" width="358" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="FaK-tA-Yqh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Oyn-hL-VQc" secondAttribute="trailing" constant="16" id="2SX-rY-4kS"/>
+                            <constraint firstItem="Oyn-hL-VQc" firstAttribute="top" secondItem="uZl-Kd-pbn" secondAttribute="bottom" constant="231" id="DRS-M7-IBs"/>
+                            <constraint firstItem="Oxs-dF-vNl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Dc3-bj-o3t"/>
+                            <constraint firstItem="Oxs-dF-vNl" firstAttribute="top" secondItem="IjV-IW-meA" secondAttribute="bottom" constant="24" id="HO6-AD-mWO"/>
+                            <constraint firstItem="uZl-Kd-pbn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="KRD-C4-7iD"/>
+                            <constraint firstItem="Oxs-dF-vNl" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="10" id="O7F-9X-kSe"/>
+                            <constraint firstItem="uZl-Kd-pbn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="cGn-MM-slO"/>
+                            <constraint firstItem="IjV-IW-meA" firstAttribute="top" secondItem="Oyn-hL-VQc" secondAttribute="bottom" constant="24" id="cXv-Xx-j1W"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uZl-Kd-pbn" secondAttribute="trailing" constant="16" id="hNX-N3-yZk"/>
+                            <constraint firstItem="Oyn-hL-VQc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="iyr-Nt-g9H"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Oxs-dF-vNl" secondAttribute="trailing" constant="16" id="okT-OR-5To"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IjV-IW-meA" secondAttribute="trailing" constant="16" id="wco-ZQ-Sh1"/>
+                            <constraint firstItem="IjV-IW-meA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="xzq-vS-36q"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="copyEncodedTextButton" destination="Oxs-dF-vNl" id="kB9-qO-n8Y"/>
+                        <outlet property="encodeStringButton" destination="IjV-IW-meA" id="Uq3-Ag-qaT"/>
+                        <outlet property="encodedTextLabel" destination="uZl-Kd-pbn" id="sCy-Um-oLi"/>
+                        <outlet property="inputTextField" destination="Oyn-hL-VQc" id="KFr-EX-205"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="101.53846153846153" y="3.5545023696682461"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
