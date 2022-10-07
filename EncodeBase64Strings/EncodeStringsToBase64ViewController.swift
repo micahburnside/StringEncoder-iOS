@@ -41,7 +41,7 @@ class EncodeStringsToBase64ViewController: BaseViewController {
     
     //usage: Pass in a textfield.text to return it's string value
     func getTextFieldText(inputTextField: String)->String {
-        let inputTextField = inputTextFieldS
+        let inputTextField = inputTextField
         return inputTextField
     }
     
