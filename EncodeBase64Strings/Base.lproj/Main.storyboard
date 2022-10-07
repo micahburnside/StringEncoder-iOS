@@ -79,10 +79,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="copyEncodedTextButton" destination="Oxs-dF-vNl" id="kB9-qO-n8Y"/>
-                        <outlet property="encodeStringButton" destination="IjV-IW-meA" id="Uq3-Ag-qaT"/>
-                        <outlet property="encodedTextLabel" destination="uZl-Kd-pbn" id="sCy-Um-oLi"/>
-                        <outlet property="inputTextField" destination="Oyn-hL-VQc" id="KFr-EX-205"/>
+                        <outlet property="buttonCopyEncodedLabelText" destination="Oxs-dF-vNl" id="kB9-qO-n8Y"/>
+                        <outlet property="buttonEncodeString" destination="IjV-IW-meA" id="Uq3-Ag-qaT"/>
+                        <outlet property="labelEncodedText" destination="uZl-Kd-pbn" id="sCy-Um-oLi"/>
+                        <outlet property="textField" destination="Oyn-hL-VQc" id="KFr-EX-205"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

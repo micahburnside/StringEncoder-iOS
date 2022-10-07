@@ -10,22 +10,22 @@ import UIKit
 class EncodeStringsToBase64ViewController: BaseViewController {
 
 //MARK: - Outlets
-    @IBOutlet weak var encodedTextLabel: UILabel!
-    @IBOutlet weak var inputTextField: UITextField!
-    @IBOutlet weak var encodeStringButton: UIButton!
-    @IBOutlet weak var copyEncodedTextButton: UIButton!
+    @IBOutlet weak var labelEncodedText: UILabel!
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var buttonEncodeString: UIButton!
+    @IBOutlet weak var buttonCopyEncodedLabelText: UIButton!
     
     //MARK: - User Interactions
     @IBAction func encodeStringToBase64Pressed(_ sender: UIButton) {
         //simple, not as re-usable
 //        setLabelTextWithEncodedString()
         //more complex, params need to be renamed for readability, re-usable
-        encodeStringAndSetLabelText(label: encodedTextLabel, inputText: encodeStringToBase64(string: getTextFieldText(inputTextField: inputTextField.text!)))
+        encodeStringAndSetLabelText(label: labelEncodedText, inputText: encodeStringToBase64(string: getTextFieldText(inputTextField: textField.text!)))
         
     }
     
     @IBAction func copyEncodedTextButtonPressed(_ sender: UIButton) {
-         UIPasteboard.general.string = encodedTextLabel.text
+         UIPasteboard.general.string = labelEncodedText.text
         print("Pasteboard Value: \(getPasteboardString())")
     }
     
@@ -36,7 +36,7 @@ class EncodeStringsToBase64ViewController: BaseViewController {
     //MARK: - TextField Methods
 
     func getInputTextFieldText()->String {
-        let inputTextFieldText = getTextFieldText(inputTextField: inputTextField.text!)
+        let inputTextFieldText = getTextFieldText(inputTextField: textField.text!)
         return inputTextFieldText
     }
     
@@ -46,7 +46,7 @@ class EncodeStringsToBase64ViewController: BaseViewController {
     }
     
     func clearTextField() {
-        inputTextField.text = nil
+        textField.text = nil
     }
     
 //MARK: - Base64 Encoding
@@ -71,19 +71,12 @@ class EncodeStringsToBase64ViewController: BaseViewController {
     
     func getLabelText(label:UILabel)->String{
         var label = String()
-        encodedTextLabel.text = label
+        labelEncodedText.text = label
         return label
     }
     
-    func setLabelText(input:String)->String{
-        var input = String()
-        encodedTextLabel.text = encodeStringToBase64(string: getInputTextFieldText())
-        input = getLabelText(label: encodedTextLabel)
-        return input
-    }
-    
     func setLabelTextWithEncodedString() {
-        encodedTextLabel.text = encodeStringToBase64(string: getTextFieldText(inputTextField: inputTextField.text!))
+        labelEncodedText.text = encodeStringToBase64(string: getTextFieldText(inputTextField: textField.text!))
         clearTextField()
     }
     
