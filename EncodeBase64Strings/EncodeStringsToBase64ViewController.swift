@@ -21,15 +21,16 @@ class EncodeStringsToBase64ViewController: BaseViewController {
         //pass in a label to receive the encoded text, pass in a reference to a textField.text object to be encoded and displayed
         encodeStringAndSetLabelText(label: labelEncodedText, inputText: encodeStringToBase64(string: getTextFieldText(inputTextField: textField.text!)))
         //tells the user their string was encoded
-        showAlert(title: "Encoded", message: "You string was encoded", style: .alert)
+        showAlert(title: "Text Encoded", message: "You string was encoded", style: .alert)
         
     }
     
     @IBAction func copyEncodedTextButtonPressed(_ sender: UIButton) {
+        
          UIPasteboard.general.string = labelEncodedText.text
         print("Pasteboard Value: \(getPasteboardString())")
         //tells the user the encoded label text was copied to the Pasteboard
-        showAlert(title: "Copied", message: "Encoded String Copied", style: .alert)
+        showAlert(title: "Text Copied", message: "Copied: \(getPasteboardString())", style: .alert)
 
     }
     
