@@ -19,6 +19,7 @@
 		549351CE28EF4985000C04E9 /* EncodeBase64StringsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549351CD28EF4985000C04E9 /* EncodeBase64StringsUITestsLaunchTests.swift */; };
 		54C07F2F28EF768600A191E7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C07F2E28EF768600A191E7 /* BaseViewController.swift */; };
 		54C07F3128EF947500A191E7 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C07F3028EF947500A191E7 /* UIViewController+.swift */; };
+		54C07F3328EFEF1800A191E7 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C07F3228EFEF1800A191E7 /* String+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		549351CD28EF4985000C04E9 /* EncodeBase64StringsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodeBase64StringsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		54C07F2E28EF768600A191E7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		54C07F3028EF947500A191E7 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		54C07F3228EFEF1800A191E7 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				54C07F2E28EF768600A191E7 /* BaseViewController.swift */,
 				54C07F3028EF947500A191E7 /* UIViewController+.swift */,
 				549351AB28EF4984000C04E9 /* EncodeStringsToBase64ViewController.swift */,
+				54C07F3228EFEF1800A191E7 /* String+.swift */,
 				549351AD28EF4984000C04E9 /* Main.storyboard */,
 				549351B328EF4985000C04E9 /* Assets.xcassets */,
 				549351B528EF4985000C04E9 /* LaunchScreen.storyboard */,
@@ -272,6 +275,7 @@
 				54C07F3128EF947500A191E7 /* UIViewController+.swift in Sources */,
 				549351A828EF4984000C04E9 /* AppDelegate.swift in Sources */,
 				549351B228EF4984000C04E9 /* EncodeBase64Strings.xcdatamodeld in Sources */,
+				54C07F3328EFEF1800A191E7 /* String+.swift in Sources */,
 				549351AA28EF4984000C04E9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,8 +20,9 @@ class EncodeStringsToBase64ViewController: BaseViewController {
         //encodes a string and sets the label text to the encoded string text value
         //label: pass in a label to receive the encoded text, inputText: pass in a reference to a textField.text object to be encoded and displayed
         encodeStringAndSetLabelText(label: labelEncodedText, inputText: encodeStringToBase64(string: getTextFieldText(inputTextField: textField.text!)))
+
         //tells the user their string was encoded
-        showAlert(title: "Text Encoded", message: "You string was encoded", style: .alert)
+        showAlert(title: "Text Encoded", message: "Your string was encoded", style: .alert)
         
     }
     
@@ -39,8 +40,12 @@ class EncodeStringsToBase64ViewController: BaseViewController {
         super.viewDidLoad()
 
     }
-    //MARK: - TextField Methods
     
+    //MARK: - TextField Methods
+    func encodeString(string:String)->String{
+        let string = UITextField().text!
+        return string
+    }
     //usage: Pass in a textfield.text to return it's string value
     func getTextFieldText(inputTextField: String)->String {
         let inputTextField = inputTextField
@@ -69,15 +74,15 @@ class EncodeStringsToBase64ViewController: BaseViewController {
     
     //MARK: - Base64 Decoding
     //decodes a string encoded with Base64 encoding and returns it's decoded value as a string
-    func decodeBase64(base64Text: String) -> String {
-        let string = base64Text
-        if let utf8str = string.data(using: .utf8) {
-            if Data(base64Encoded: utf8str, options: Data.Base64DecodingOptions(rawValue: 0))
-                .map({ String(data: $0, encoding: .utf8) }) != nil {
-            }
-        }
-        return base64Text
-    }
+//    func decodeBase64(base64Text: String) -> String {
+//        let string = base64Text
+//        if let utf8str = string.data(using: .utf8) {
+//            if Data(base64Encoded: utf8str, options: Data.Base64DecodingOptions(rawValue: 0))
+//                .map({ String(data: $0, encoding: .utf8) }) != nil {
+//            }
+//        }
+//        return 
+//    }
     
     //MARK: - Label Text Methods
     //reads and returns the label.text value from a given label as a String
@@ -88,6 +93,7 @@ class EncodeStringsToBase64ViewController: BaseViewController {
         return label.text!
     }
     
+    //MARK: - Set Label Text Methods
     //sets labelEncoded.text to a string that has been encoded with Base64 encoding
     //hard coded, but simplifed to a function call when used.
     //could be modified with more function parameters
@@ -96,7 +102,6 @@ class EncodeStringsToBase64ViewController: BaseViewController {
         clearTextField()
     }
     
-    //MARK: - Encoding String (label:UILabel,inputText:String)
     //label: pass in a reference to the label to receive encodedText, inputText: pass in a reference to a textField.text or a function that gets the textField.text object to be encoded and displayed
     func encodeStringAndSetLabelText(label: UILabel, inputText: String) {
         let label = label

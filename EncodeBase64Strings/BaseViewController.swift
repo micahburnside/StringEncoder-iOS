@@ -17,6 +17,7 @@ class BaseViewController: UIViewController {
     
     func getPasteboardString()->String{
         let pasteboardString = UIPasteboard.general.string
+        print("\(pasteboardString)")
         return pasteboardString!
     }
 }
