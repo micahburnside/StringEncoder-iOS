@@ -45,17 +45,19 @@ class EncodeStringsToBase64ViewController: BaseViewController, UITextFieldDelega
     
     //MARK: - TextField Methods
     func checkIfEmpty(textField: UITextField) -> Bool {
-        if textField.text == "" {
-            
+        if textField.hasText == false {
+            showAlert(title: "Error", message: "text field is empty", style: .alert)
         }
         return true
     }
     
-    func  (string:String, textField: UITextField)->String{
+    func encodeString(string:String, textField: UITextField)->String{
         let textField = textField
         let string = textField.text!
+        checkIfEmpty(textField: inputTextField)
         return string
     }
+
     //usage: Pass in a textfield.text to return it's string value
     func getTextFieldText(inputTextField: String)->String {
         let inputTextField = inputTextField
@@ -79,6 +81,7 @@ class EncodeStringsToBase64ViewController: BaseViewController, UITextFieldDelega
         let base64Encoded = utf8str?.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0))
         print("\(String(describing: base64Encoded))")
         //returns base64Encoded to satisfy the String return type requirement
+        checkIfEmpty(textField: inputTextField)
         return base64Encoded!
     }
     
