@@ -20,6 +20,7 @@
                                 <rect key="frame" x="16" y="47" width="358" height="350"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="350" id="l28-JO-Jsl"/>
                                     <constraint firstAttribute="height" constant="350" id="qix-hD-7wo"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -27,7 +28,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IjV-IW-meA">
-                                <rect key="frame" x="16" y="700" width="358" height="48"/>
+                                <rect key="frame" x="16" y="565" width="358" height="48"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="kaE-Hn-2X5"/>
@@ -38,8 +39,25 @@
                                     <action selector="encodeStringToBase64Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iyN-6t-aI5"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="input string here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oyn-hL-VQc">
+                                <rect key="frame" x="16" y="493" width="358" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="FaK-tA-Yqh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Encoded Text:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKc-qS-4bJ">
+                                <rect key="frame" x="16" y="421" width="351" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="WqO-3O-rST"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oxs-dF-vNl">
-                                <rect key="frame" x="16" y="772" width="358" height="48"/>
+                                <rect key="frame" x="16" y="637" width="358" height="48"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="54l-Nb-Aac"/>
@@ -51,29 +69,24 @@
                                     <action selector="copyEncodedTextButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sNq-O9-cHD"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="input string here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oyn-hL-VQc">
-                                <rect key="frame" x="16" y="628" width="358" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="FaK-tA-Yqh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Oyn-hL-VQc" secondAttribute="trailing" constant="16" id="2SX-rY-4kS"/>
-                            <constraint firstItem="Oyn-hL-VQc" firstAttribute="top" secondItem="uZl-Kd-pbn" secondAttribute="bottom" constant="231" id="DRS-M7-IBs"/>
+                            <constraint firstItem="sKc-qS-4bJ" firstAttribute="top" secondItem="uZl-Kd-pbn" secondAttribute="bottom" constant="24" id="7w8-QV-TS3"/>
                             <constraint firstItem="Oxs-dF-vNl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Dc3-bj-o3t"/>
                             <constraint firstItem="Oxs-dF-vNl" firstAttribute="top" secondItem="IjV-IW-meA" secondAttribute="bottom" constant="24" id="HO6-AD-mWO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sKc-qS-4bJ" secondAttribute="trailing" constant="23" id="J1S-8E-LUh"/>
                             <constraint firstItem="uZl-Kd-pbn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="KRD-C4-7iD"/>
+                            <constraint firstItem="Oyn-hL-VQc" firstAttribute="top" secondItem="sKc-qS-4bJ" secondAttribute="bottom" constant="24" id="NaF-vr-nbj"/>
                             <constraint firstItem="Oxs-dF-vNl" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="10" id="O7F-9X-kSe"/>
                             <constraint firstItem="uZl-Kd-pbn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="cGn-MM-slO"/>
                             <constraint firstItem="IjV-IW-meA" firstAttribute="top" secondItem="Oyn-hL-VQc" secondAttribute="bottom" constant="24" id="cXv-Xx-j1W"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uZl-Kd-pbn" secondAttribute="trailing" constant="16" id="hNX-N3-yZk"/>
                             <constraint firstItem="Oyn-hL-VQc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="iyr-Nt-g9H"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Oxs-dF-vNl" secondAttribute="trailing" constant="16" id="okT-OR-5To"/>
+                            <constraint firstItem="sKc-qS-4bJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="uBZ-ax-NIv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IjV-IW-meA" secondAttribute="trailing" constant="16" id="wco-ZQ-Sh1"/>
                             <constraint firstItem="IjV-IW-meA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="xzq-vS-36q"/>
                         </constraints>
@@ -82,6 +95,7 @@
                         <outlet property="buttonCopyEncodedLabelText" destination="Oxs-dF-vNl" id="kB9-qO-n8Y"/>
                         <outlet property="buttonEncodeString" destination="IjV-IW-meA" id="Uq3-Ag-qaT"/>
                         <outlet property="labelEncodedText" destination="uZl-Kd-pbn" id="sCy-Um-oLi"/>
+                        <outlet property="labelInputText" destination="sKc-qS-4bJ" id="eEa-Zs-7tr"/>
                         <outlet property="textField" destination="Oyn-hL-VQc" id="KFr-EX-205"/>
                     </connections>
                 </viewController>
