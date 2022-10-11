@@ -9,14 +9,12 @@ import Foundation
 import UIKit
 
 class BaseViewController: UIViewController, UITextViewDelegate {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addKeyboardObserver()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-    }
     
     func getPasteboardString()->String{
         let pasteboardString = UIPasteboard.general.string
@@ -41,7 +39,7 @@ class BaseViewController: UIViewController, UITextViewDelegate {
     @objc func keyboardWillHide(notification: NSNotification) {
         guard let userInfo = notification.userInfo else {return}
         guard let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {return}
-        let keyboardFrame = keyboardSize.cgRectValue
+//        let keyboardFrame = keyboardSize.cgRectValue
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
             }
@@ -53,16 +51,17 @@ class BaseViewController: UIViewController, UITextViewDelegate {
 
         self.navigationController?.pushViewController(controller, animated: true)
     }
+    
 
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return false
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        return self.textFieldShouldReturn(textField: textField)
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) -> Bool {
         self.resignFirstResponder()
+        return true
     }
-    
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }

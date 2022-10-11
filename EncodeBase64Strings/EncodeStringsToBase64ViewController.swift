@@ -7,12 +7,12 @@
 import Foundation
 import UIKit
 
-class EncodeStringsToBase64ViewController: BaseViewController {
+class EncodeStringsToBase64ViewController: BaseViewController, UITextFieldDelegate {
 
 //MARK: - Outlets
     @IBOutlet weak var labelEncodedText: UILabel!
     @IBOutlet weak var labelInputText: UILabel!
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var buttonEncodeString: UIButton!
     @IBOutlet weak var buttonCopyEncodedLabelText: UIButton!
     
@@ -20,11 +20,11 @@ class EncodeStringsToBase64ViewController: BaseViewController {
     @IBAction func encodeStringToBase64Pressed(_ sender: UIButton) {
         //encodes a string and sets the label text to the encoded string text value
         //label: pass in a label to receive the encoded text, inputText: pass in a reference to a textField.text object to be encoded and displayed
-        encodeStringAndSetLabelText(label: labelEncodedText, inputText: encodeStringToBase64(string: getTextFieldText(inputTextField: textField.text!)))
+        encodeStringAndSetLabelText(label: labelEncodedText, inputText: encodeStringToBase64(string: getTextFieldText(inputTextField: inputTextField.text!)))
         
-        labelInputText.text = "Encoded Text: \(textField.text!)"
+        labelInputText.text = "Encoded Text: \(inputTextField.text!)"
         //tells the user their string was encoded
-        showAlert(title: "Text Encoded", message: "Your string was encoded", style: .alert)
+        showAlert(title: "Success", message: "'\(inputTextField.text!)' - encoded", style: .alert)
         clearTextField()
         
     }
@@ -35,7 +35,7 @@ class EncodeStringsToBase64ViewController: BaseViewController {
         //prints the Pasteboard value to the console to notify the developer of the Pasteboard value
         print("Pasteboard Value: \(getPasteboardString())")
         //tells the user the encoded label text was copied to the Pasteboard
-        showAlert(title: "Success", message: "\(getPasteboardString()) successfully encoded", style: .alert)
+        showAlert(title: "Success", message: "'\(getPasteboardString())' - copied", style: .alert)
     }
     
     override func viewDidLoad() {
@@ -44,8 +44,16 @@ class EncodeStringsToBase64ViewController: BaseViewController {
     }
     
     //MARK: - TextField Methods
-    func encodeString(string:String)->String{
-        let string = UITextField().text!
+    func checkIfEmpty(textField: UITextField) -> Bool {
+        if textField.text == "" {
+            
+        }
+        return true
+    }
+    
+    func  (string:String, textField: UITextField)->String{
+        let textField = textField
+        let string = textField.text!
         return string
     }
     //usage: Pass in a textfield.text to return it's string value
@@ -56,7 +64,7 @@ class EncodeStringsToBase64ViewController: BaseViewController {
     
     func clearTextField() {
         //sets textField.text to nil
-        textField.text = nil
+        inputTextField.text = nil
     }
     
 //MARK: - Base64 Encoding
@@ -100,7 +108,7 @@ class EncodeStringsToBase64ViewController: BaseViewController {
     //hard coded, but simplifed to a function call when used.
     //could be modified with more function parameters
     func setLabelTextWithEncodedString() {
-        labelEncodedText.text = encodeStringToBase64(string: getTextFieldText(inputTextField: textField.text!))
+        labelEncodedText.text = encodeStringToBase64(string: getTextFieldText(inputTextField: inputTextField.text!))
         clearTextField()
     }
     
